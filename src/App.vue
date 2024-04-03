@@ -203,7 +203,7 @@ form input[type="submit"]{
   background-color: #94bf73;
   padding: 0.5rem 1rem;
   color:white;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   transition: 200ms linear;
   border-left: 3px solid transparent;
@@ -217,14 +217,14 @@ form input[type="submit"]:hover{
 }
 
 .canvas-box {
-  width: calc(100% - 2rem); /* Adjusted width to consider padding */
+  width: calc(100% - 2rem);
   max-width: 720px;
   background-color: white;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced box shadow for a lighter effect */
-  margin: 0 auto 2rem; /* Centering the box horizontally and adding bottom margin */
-  box-sizing: border-box; /* Ensuring padding is included in the width calculation */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  margin: 0 auto 2rem; 
+  box-sizing: border-box;
 }
 
 .weight-history ul{
@@ -269,12 +269,12 @@ form input[type="submit"]:hover{
 /* For desktop screens */
 @media (min-width: 768px) {
   .canvas-box {
-    width: 100%; /* Adjusted width for desktop screens */
+    width: 100%; 
     max-width: 720px;
   }
 }
 
-/* For mobile screens */
+
 .canvas-box {
   width: calc(100% - 2rem);
   max-width: 720px;
