@@ -135,7 +135,8 @@ h1{
 h2{
   margin-bottom: 1rem;
   color: #503d5c;
-  font-weight: 400;
+  font-weight: 700;
+
 }
 
 .current{
@@ -215,15 +216,17 @@ form input[type="submit"]:hover{
   border-left-color:#72b043;
 }
 
-.canvas-box{
-  width: 100%;
+.canvas-box {
+  width: calc(100% - 2rem); /* Adjusted width to consider padding */
   max-width: 720px;
   background-color: white;
-  padding:1rem;
+  padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced box shadow for a lighter effect */
+  margin: 0 auto 2rem; /* Centering the box horizontally and adding bottom margin */
+  box-sizing: border-box; /* Ensuring padding is included in the width calculation */
 }
+
 .weight-history ul{
   list-style: none;
   padding: 0;
@@ -241,5 +244,47 @@ form input[type="submit"]:hover{
 .weight-history ul li:nth-child(even){
   background-color: #dfdfdf;
 }
+
+.weight-history ul li:hover{
+  background-color: #dfdfdf;
+}
+.weight-history ul li:last-of-type{
+  border-bottom: none;
+  
+}
+
+.weight-history ul li span{
+  display:block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.weight-history ul li small{
+  color: #888;
+
+  
+}
+
+/* For desktop screens */
+@media (min-width: 768px) {
+  .canvas-box {
+    width: 100%; /* Adjusted width for desktop screens */
+    max-width: 720px;
+  }
+}
+
+/* For mobile screens */
+.canvas-box {
+  width: calc(100% - 2rem);
+  max-width: 720px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 2rem;
+  box-sizing: border-box;
+}
+
 
 </style>
