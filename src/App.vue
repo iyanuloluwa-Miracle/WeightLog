@@ -170,4 +170,76 @@ h2{
   font-weight: bold;
 }
 
+form{
+  display: flex;
+  margin-bottom: 2rem;
+  border: 1px solid #AAA;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: 200ms linear;
+}
+form:focus-within,
+form:hover{
+  border-color: #72b043;
+  border-width: 2px;
+}
+
+form input[type="number"]{
+  appearance: none;
+  outline: none;
+  border:none;
+  background: white;
+  flex:1 1 0%;
+  padding: 1rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+form input[type="submit"]{
+  appearance: none;
+  outline: none;
+  border:none;
+  cursor: pointer;
+  background-color: #94bf73;
+  padding: 0.5rem 1rem;
+  color:white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: 200ms linear;
+  border-left: 3px solid transparent;
+}
+
+
+form input[type="submit"]:hover{
+  background-color: #1abc9c;
+  color:white;
+  border-left-color:#72b043;
+}
+
+.canvas-box{
+  width: 100%;
+  max-width: 720px;
+  background-color: white;
+  padding:1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+.weight-history ul{
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+
+.weight-history ul li{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  cursor:pointer;
+}
+
+.weight-history ul li:nth-child(even){
+  background-color: #dfdfdf;
+}
+
 </style>
