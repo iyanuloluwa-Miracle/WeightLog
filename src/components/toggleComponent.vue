@@ -1,103 +1,108 @@
 <template>
   <body color-scheme="isDark ? 'light' : 'dark'">
-    <label class="switch">
-      <input type="checkbox" @click="toggleDark()"/>
-      <span class="slider round"></span>
-    </label>
-
+    <div class="checkbox-wrapper-51">
+      <input id="cbx-51" type="checkbox" @click="toggleDark()" />
+      <label class="toggle" for="cbx-51">
+        <span>
+          <svg viewBox="0 0 10 10" height="10px" width="10px">
+            <path
+              d="M5,1 L5,1 C2.790861,1 1,2.790861 1,5 L1,5 C1,7.209139 2.790861,9 5,9 L5,9 C7.209139,9 9,7.209139 9,5 L9,5 C9,2.790861 7.209139,1 5,1 L5,9 L5,1 Z"
+            ></path>
+          </svg>
+        </span>
+      </label>
+    </div>
   </body>
 </template>
 
 <script setup>
-import { useDark, useToggle } from '@vueuse/core';
-
-
+import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark({
-  selector:"body",
-  attribute:'color-scheme',
-  valueDark:'dark',
-  valueLight:'light',
-})
+  selector: "body",
+  attribute: "color-scheme",
+  valueDark: "dark",
+  valueLight: "light",
+});
 
-const toggleDark = useToggle(isDark)
-
+const toggleDark = useToggle(isDark);
 </script>
 
 <style>
+.checkbox-wrapper-51 input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
 
-.switch {
+.checkbox-wrapper-51 .toggle {
   position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
+  display: block;
+  width: 42px;
+  height: 24px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper-51 .toggle:before {
+  content: "";
+  position: relative;
+  top: 1px;
+  left: 1px;
+  width: 40px;
+  height: 22px;
+  display: block;
+  background: #c8ccd4;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.checkbox-wrapper-51 .toggle span {
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #94bf73;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #94bf73;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
+  width: 24px;
+  height: 24px;
+  display: block;
+  background: #fff;
   border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(154, 153, 153, 0.75);
+  transition: all 0.2s ease;
 }
 
+.checkbox-wrapper-51 .toggle span svg {
+  margin: 7px;
+  fill: none;
+}
 
-[color-scheme = 'light']{
+.checkbox-wrapper-51 .toggle span svg path {
+  stroke: #c8ccd4;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 0;
+  transition: all 0.5s linear;
+}
+
+.checkbox-wrapper-51 input[type="checkbox"]:checked + .toggle:before {
+  background: #b5ea8c;
+}
+
+.checkbox-wrapper-51 input[type="checkbox"]:checked + .toggle span {
+  transform: translateX(18px);
+}
+
+.checkbox-wrapper-51 input[type="checkbox"]:checked + .toggle span path {
+  stroke: #000000;
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
+}
+
+[color-scheme="light"] {
   background-color: white;
-  
 }
-[color-scheme = 'dark']{
+[color-scheme="dark"] {
   background-color: black;
-
 }
-
-
-
 </style>
