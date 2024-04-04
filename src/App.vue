@@ -1,5 +1,6 @@
 <script setup>
 import { ref, shallowRef, computed, watch, nextTick } from 'vue'
+import toggleComponent from './components/toggleComponent.vue'
 import Chart from 'chart.js/auto'
 
 const weights = ref([])  
@@ -71,11 +72,17 @@ watch(weights, newWeights =>{
         })
     })
 }, {deep: true})
+
 </script>
 
 <template>
   <main>
-    <h1>Weight<strong>Log</strong></h1>
+    <div class="header">
+      <h1>Weight<strong>Log</strong></h1>
+      <toggleComponent/>
+
+    </div>
+    
     <div class="current">
       <span>{{ currentWeight.weight }}</span>
       <small>Current Weight (kg)</small>
@@ -123,7 +130,11 @@ body{
 main{
   padding:1.5rem;
 }
-
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+}
 h1{
   font-size: 3em;
   color: #72b043;
